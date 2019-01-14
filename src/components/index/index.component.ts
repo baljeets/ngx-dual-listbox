@@ -67,7 +67,7 @@ import { difference } from '../../model/set';
     <div class="container-items" [style.minHeight]="minHeight">
       <div *ngFor="let item of availableItems.totalItems" [ngClass]="{ choosed: availableItems.isSelected(item,1) }" (click)="availableItems.select(item)">
         <div *ngIf="templateItem;else noTemplateItem">
-          <ng-container [ngTemplateOutlet]="templateItem" [ngOutletContext]="{ data: item }">
+          <ng-container [ngTemplateOutletContext]="templateItem" [ngOutletContext]="{ data: item }">
           </ng-container>
         </div>
         <ng-template #noTemplateItem>
